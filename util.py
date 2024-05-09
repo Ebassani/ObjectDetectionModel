@@ -26,3 +26,10 @@ def count_labels(labels):
         else:
             label_counts[label] = 1
     return [[label, count] for label, count in label_counts.items()]
+
+
+def list_to_string(lst):
+    items = []
+    for item in lst:
+        items.append(f"{item[1]} {item[0]}")
+    return ", ".join(items)

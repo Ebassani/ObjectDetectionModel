@@ -2,6 +2,7 @@ import torch
 from ultralytics import YOLO
 from util import indexes_to_labels
 
+
 class ObjectDetection:
     def __init__(self, path):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'

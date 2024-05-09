@@ -1,6 +1,7 @@
-from ultralytics import YOLO
+# from ultralytics import YOLO
 import segmentation
 from util import count_labels
+import gpt_connections
 
 # model = YOLO("runs/detect/train30/weights/best.pt")
 
@@ -16,7 +17,8 @@ object_detection = segmentation.ObjectDetection("runs/detect/train30/weights/bes
 
 labels = object_detection.get_labels("resources/images/cebola-stuttgarter.jpg", 0.6)
 
-print(labels)
-
 counted_labels = count_labels(labels)
-print(counted_labels)
+# print(counted_labels)
+
+gpt_assistant = gpt_connections.GPTAssistant()
+gpt_assistant.ask_for_recipe(counted_labels)
