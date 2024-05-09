@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19b4c681-acc9-465c-8346-08bdcc8bffde" name="Changes" comment="creating class fot object detection">
+    <list default="true" id="19b4c681-acc9-465c-8346-08bdcc8bffde" name="Changes" comment="Getting label index from predictions">
+      <change afterPath="$PROJECT_DIR$/resources/labels.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/segmentation.py" afterDir="false" />
@@ -138,7 +140,7 @@
       <workItem from="1714888755853" duration="7335000" />
       <workItem from="1714923228935" duration="1280000" />
       <workItem from="1714942319391" duration="3736000" />
-      <workItem from="1715078778572" duration="10440000" />
+      <workItem from="1715078778572" duration="13319000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -156,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715109844266</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Getting label index from predictions">
+      <option name="closed" value="true" />
+      <created>1715256826100</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715256826100</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,10 +186,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="creating class fot object detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating class fot object detection" />
+    <MESSAGE value="Getting label index from predictions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Getting label index from predictions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ObjectDetectionModel$convert.coverage" NAME="convert Coverage Results" MODIFIED="1714490980249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ObjectDetectionModel$main.coverage" NAME="main Coverage Results" MODIFIED="1715252890424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ObjectDetectionModel$main.coverage" NAME="main Coverage Results" MODIFIED="1715256933123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

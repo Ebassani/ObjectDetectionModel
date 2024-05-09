@@ -1,6 +1,6 @@
 import torch
 from ultralytics import YOLO
-
+from util import indexes_to_labels
 
 class ObjectDetection:
     def __init__(self, path):
@@ -33,13 +33,13 @@ class ObjectDetection:
 
         return data
 
-    def get_labels(self, data, min_confidence):
+    def get_labels(self, image, min_confidence):
         indexes = []
+
+        data = self.get_data(image)
 
         for box in data:
             if box[4] > min_confidence:
-                indexes.append(box[5])
+                indexes.append(int(box[5]))
 
-            print(box)
-
-        return indexes
+        return indexes_to_labels(indexes, "resources/labels.txt")
