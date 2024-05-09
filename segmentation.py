@@ -3,13 +3,14 @@ from ultralytics import YOLO
 
 
 class ObjectDetection:
-    def __init__(self):
+    def __init__(self, path):
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        self.path = path
 
         self.model = self.load_model()
 
     def load_model(self):
-        model = YOLO("runs/detect/train28/weights/best.pt")
+        model = YOLO(self.path)
         model.fuse()
 
         return model
@@ -19,11 +20,26 @@ class ObjectDetection:
 
         return results
 
-    def get_boxes(self, results):
+    def get_data(self, image):
+
+        results = self.predict(image)
+
+        data = []
 
         for result in results:
             boxes = result.boxes.cpu().numpy()
 
-            print(boxes)
-            print("======================")
-            print(boxes.xyxy[5])
+            data = boxes.data
+
+        return data
+
+    def get_labels(self, data, min_confidence):
+        indexes = []
+
+        for box in data:
+            if box[4] > min_confidence:
+                indexes.append(box[5])
+
+            print(box)
+
+        return indexes
