@@ -13,6 +13,7 @@ class GPTAssistant:
           name="Chef",
           instructions="You are a chef, you provide recipes based on the ingredients provided by the user. You also "
                        "modify it according to user preference. Use some or all of the ingredients provided."
+                       "No other ingredients except spices."
                        "Give a name for the recipe",
           model="gpt-3.5-turbo",
         )
@@ -31,11 +32,20 @@ class GPTAssistant:
         ) as stream:
             stream.until_done()
 
+    def feedback(self, feedback):
+        with self.client.beta.threads.runs.stream(
+                thread_id=self.thread.id,
+                assistant_id=self.assistant.id,
+                instructions=feedback,
+                event_handler=EventHandler(),
+        ) as stream:
+            stream.until_done()
+
 
 class EventHandler(AssistantEventHandler):
     @override
     def on_text_created(self, text) -> None:
-        print(f"\nAssistant > ", end="", flush=True)
+        print(f"\nAssistant >\n", end="", flush=True)
 
     @override
     def on_text_delta(self, delta, snapshot):

@@ -18,3 +18,4 @@ counted_labels = count_labels(labels)
 
 gpt_assistant = gpt_connections.GPTAssistant()
 gpt_assistant.ask_for_recipe(counted_labels)
+gpt_assistant.feedback("I want a spicier recipe")
