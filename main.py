@@ -8,10 +8,6 @@ import gpt_connections
 # model.train(data="resources/Ingredient detection.v1i.yolov8/data.yaml", epochs=120)  # train the model
 # metrics = model.val()  # evaluate model performance on the validation set
 
-# model.export(format="onnx")
-
-# print("================")
-
 
 object_detection = segmentation.ObjectDetection("runs/detect/train30/weights/best.pt")
 

@@ -40,7 +40,7 @@ class ObjectDetection:
         data = self.get_data(image)
 
         for box in data:
-            if box[4] > min_confidence:
+            if box[4] >= min_confidence:
                 indexes.append(int(box[5]))
 
         return indexes_to_labels(indexes, "resources/labels.txt")

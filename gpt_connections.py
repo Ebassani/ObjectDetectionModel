@@ -19,7 +19,7 @@ class GPTAssistant:
         self.thread = self.client.beta.threads.create()
 
     def ask_for_recipe(self, ingredients):
-        ingredients = ''.join(list_to_string(ingredients))
+        ingredients = list_to_string(ingredients)
         instructions = "Use the following ingredients: " + ingredients
         print(instructions)
 

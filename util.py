@@ -1,4 +1,4 @@
-def read_labels_from_file(file_path):
+def read_labels(file_path):
     try:
         with open(file_path, 'r') as file:
             labels = file.readlines()
@@ -9,9 +9,9 @@ def read_labels_from_file(file_path):
         return []
 
 
-def indexes_to_labels(indexes, file):
+def indexes_to_labels(indexes, file_path):
     labels = []
-    labels_from_file = read_labels_from_file(file)
+    labels_from_file = read_labels(file_path)
     for index in indexes:
         labels.append(labels_from_file[index])
 
